@@ -1,0 +1,15 @@
+<h1>Our Movies</h1>
+
+<%= link_to("Create New Movie", new_movie_path) %>
+
+<ul>
+    <% @movies.each_with_index do | movie, index | %>
+        <li>
+            <p>Title: <%= movie["title"] %></p>
+            <p>Rating: <%= movie["rating"] %></p>
+            <p>Release Date: <%= movie["date"] %></p>
+            <%= link_to("Show", movie_path(index)) %>
+            <%= link_to("Edit", edit_movie_path(index)) %>
+        </li>
+    <% end %>
+</ul>
